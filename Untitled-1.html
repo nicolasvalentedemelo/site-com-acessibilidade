@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Desigualdade Social</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Adicionando Font Awesome para ícones -->
+  <style>
+    /* Estilo geral */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 60px; /* Espaço abaixo dos botões de zoom */
+    }
+    
+    p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    ul {
+      margin-bottom: 15px;
+    }
+    
+    li {
+      color: #666;
+      margin-left: 20px;
+    }
+
+    /* Estilo para fixar os botões de zoom no topo */
+    .zoom-buttons {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.9); /* Fundo branco transparente */
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .zoom-buttons button {
+      background-color: #4CAF50; /* Cor de fundo verde */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .zoom-buttons button:hover {
+      background-color: #45a049; /* Cor de fundo verde escura ao passar o mouse */
+    }
+
+    .zoom-buttons button i {
+      margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+    }
+  </style>
+</head>
+<body>
+  <!-- Botões de zoom fixados no topo -->
+  <div class="zoom-buttons">
+    <button onclick="zoomIn()"><i class="fas fa-search-plus"></i> Aumentar Zoom</button>
+    <button onclick="zoomOut()"><i class="fas fa-search-minus"></i> Diminuir Zoom</button>
+    <button onclick="resetZoom()"><i class="fas fa-sync-alt"></i> Restaurar Zoom</button>
+  </div>
+
+  <br><br> <!-- Espaço extra para posicionar o título abaixo dos botões de zoom -->
+  
+  <h1>Desigualdade Social</h1>
+  <p>A desigualdade social é um problema que afeta todos os países do mundo, em diferentes graus. Ela se refere à diferença de renda, riqueza, educação e oportunidades entre diferentes grupos sociais.</p>
+  <p>A desigualdade social pode ter várias causas, como a herança, o acesso à educação, as oportunidades de emprego, as políticas públicas e a discriminação.</p>
+  <p>A desigualdade social tem consequências negativas para a sociedade como um todo, pois pode levar à pobreza, à violência, à criminalidade e à instabilidade política.</p>
+  <p>É importante combater a desigualdade social para promover o desenvolvimento econômico e social e garantir uma vida melhor para todos.</p>
+  <p>Algumas medidas que podem ser tomadas para combater a desigualdade social incluem:</p>
+  <ul>
+    <li>Investimento em educação</li>
+    <li>Criação de empregos</li>
+    <li>Promoção da igualdade de oportunidades</li>
+    <li>Combate à discriminação</li>
+  </ul>
+  <p>O combate à desigualdade social é um desafio, mas é um desafio que vale a pena enfrentar.</p>
+  
+  <script>
+    var currentZoom = 100; // Inicializa o zoom em 100%
+
+    function zoomIn() {
+      currentZoom += 10; // Aumenta o zoom em 10%
+      document.body.style.zoom = currentZoom + "%";
+    }
+
+    function zoomOut() {
+      currentZoom -= 10; // Diminui o zoom em 10%
+      document.body.style.zoom = currentZoom + "%";
+    }
+
+    function resetZoom() {
+      currentZoom = 100; // Restaura o zoom para 100%
+      document.body.style.zoom = currentZoom + "%";
+    }
+  </script>
+  
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  
+</body>
+</html>
